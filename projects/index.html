@@ -98,7 +98,7 @@
             <h1 class="post-title">Portfolio</h1>
             <p class="post-description">
 			This Portfolio is a compilation of all the Data Science projects I have done for academic, self-learning and hobby purposes.
-			This portfolio also contains my work experience project details, achievements, skills, and certificates.</p>
+			This portfolio also contains my work experience project details, core competencies, skills, achievements, and certificates.</p>
           </header>
 
           <article>
@@ -106,89 +106,202 @@
 <div class="projects">
   
 <!-- Adding vertical space -->
-<p>      .  
+<p>      
 </p>  
   
   <h2 id="projects">Projects</h2>
   
-  <p><strong><a href="https://github.com/archd3sai/Customer-Survival-Analysis-and-Churn-Prediction">Customer Survival Analysis and Churn Prediction</a></strong></p>
+  <h3><strong><a href="https://github.com/Swapnil-Ransing/PredictingClientsLoanRepaymentAbility">Predicting Clients Loan Repayment Ability</a></strong></h3>
   <div class="container_row">
-      <img class="project_m" align="left" width="250" height="150" src="Images/telecom.jpg" style="padding-right: 1em;padding-bottom: 1em;">
 
       <div class="text">
-        In this project I have used survival analysis to study how the likelihood of the customer churn changes over time. I have also implementd a Random Forest model to predict the customer churn and deployed a model using flask webapp on Heroku. <a href="https://churn-prediction-app.herokuapp.com/">App</a>
+        Many people struggle to get loans due to insufficient or non-existent credit histories. Unfortunately, this population is often taken advantage 
+		of by untrustworthy lenders. Home credit accesses repayment ability of this unbanked population by using variety of data including telco and 
+		transactional information. Doing so will ensure that clients capable of repayment are not rejected and that loans are given.
+<p>      
+</p>
+		This problem statement of predicting clients loan repayment ability is a Kaggle competition happened in year 2018. 
+		This competition was conducted by Home credit group. Home credit is an international consumer finance provider company.
+		
+		<p>       
+</p>
+<p>		Following steps were taken to solve this case study:</p>
+  <li><strong>EDA and Featurization: </strong> EDA is performed to understand variables correlation with target. Created around 
+1770 features consisting of velocity, age, count, decay, categorical variables from provided datasets.</li>
+  <li><strong>Feature Selection: </strong>Small set of important features selected using weight of evidence and Information value, 
+  forward feature selection and count of votes from different ml models feature importance.</li>
+  <li><strong>Modeling: </strong>Variaous machine learning and deep learning algorithms hyperparameters are tuned to achieve the best performance. 
+  Amongst these, selected best performing LightGBM model.</li>
+  <li><strong>Results: </strong> LightGBM model gave 76% ROC AUC and 53% fraud capture rate at 20% operating range on the OOT data.</li>
       </div>
   </div>
-
-  <p><strong><a href="https://github.com/archd3sai/Instacart-Market-Basket-Analysis">Instacart Market Basket Analysis</a></strong></p>
+ 
+		<p>       
+</p> 
+    <h3><strong><a href="https://github.com/Swapnil-Ransing/Microsoft-Malware-Detection">Multiclass classification using Natural language processing</a></strong></h3>
   <div class="container_row">
-      <img class="project_m" align="left" width="250" height="150" src="Images/instacart.jpeg" style="padding-right: 1em;padding-bottom: 1em;">
 
       <div class="text">
-        The objective of this project is to analyze the 3 million grocery orders from more than 200,000 Instacart users and predict which previously purchased item will be in user's next order. Customer segmentation and affinity analysis are also done to study user purchase patterns.</p>
+        Malware is any software intentionally designed to cause disruption to a computer, server, client, or computer network, leak private information, 
+		gain unauthorized access to information or systems, deprive users access to information or which unknowingly interferes with the user's computer 
+		security and privacy. 
+<p>        
+</p>
+		In this project task is to identify whether a given piece of file is a malware or not.
+		
+		<p>       
+</p>
+<p>		Following steps were taken to solve this case study:</p>
+  <li>Malware byte and asm files featurized using unigrams, bigrams and image intensity.</li>
+  <li>Multivariate analysis (tSNE) was performed to analyze the class distribution.</li>
+  <li><strong>Modeling: </strong>Variaous machine learning and deep learning algorithms hyperparameters are tuned to achieve the best performance. 
+  Amongst these, selected best performing XGBoost model.</li>
+  <li><strong>Results: </strong> XGBoost model gave 0.014719 oot log loss and 0.368% misclassification.</li>
       </div>
   </div>
-
-  <p><strong><a href="https://github.com/archd3sai/News-Articles-Recommendation">Hybrid-filtering News Articles Recommendation Engine</a></strong></p>
-  <div class="container_row">
-      <img class="project_m" align="left" width="250" height="150" src="Images/1_cEaeMuTvINqIgyYQMSJWUA.jpeg" style="padding-right: 1em;padding-bottom: 1em;">
-
-      <div class="text">
-        A hybrid-filtering personalized news articles recommendation system which can suggest articles from popular news service providers based on reading history of twitter users who share similar interests (Collaborative filtering) and content similarity of the article and user’s tweets (Content-based filtering).</p>
-      </div>
-  </div>
-
-  <p><strong><a href="https://github.com/archd3sai/Predictive-Maintenance-of-Aircraft-Engine">Predictive Maintenance of Aircraft Engine</a></strong></p>
-  <div class="container_row">
-      <img class="project_m" align="left" width="250" height="150" src="Images/airplane.jpeg" style="padding-right: 1em;padding-bottom: 1em;">
-
-      <div class="text">
-        In this project I have used models such as RNN, LSTM, 1D-CNN to predict the engine failure 50 cycles ahead of its time, and calculated feature importance from them using sensitivity analysis and shap values. Exponential degradation and similarity-based models are also used to calculate its remaining life.</p>
-      </div>
-  </div>
-
-  <p><strong><a href="https://github.com/archd3sai/Multivariate-Phase-1-Analysis">Multivariate Phase 1 Analysis</a></strong></p>
-  <div class="container_row">
-      <img class="project_m" align="left" width="250" height="150" src="Images/phase1.jpg" style="padding-right: 1em;padding-bottom: 1em;">
-
-      <div class="text">
-        Objective of this project is to identify the in-control data points and eliminate out of control data points to set up distribution parameters for manufacturing process monitoring. I utilized PCA for dimension reduction and Hotelling T2 and m-CUSUM control charts to established mean and variance matrices.</p>
-      </div>
   </div>
   
   
  <!-- Adding vertical space -->
-<p>      .  
+<p>      
 </p> 
   
   <h2 id="micro-projects">Work Experience Projects</h2>
   <ul>
-  <li><h4 id="statistics-and-machine-learning">Payment Fraud Risk Strategy Development</h4>
+  <li><h4 id="statistics-and-machine-learning">Fraudulent Transaction Detection</h4>
   <ul>
-  <li>Developed transactional velocity, age, count and other features that effectively define the fraud patterns and 
-captures account take overs, IT refund and suspected fraud patterns</li>
-  <li>Implemented Aadaboost, Neural network and Autoencoder models developed on statistically selected 
-features in AWS sagemaker studio and deployed in production for fraudulent transaction detection</li>
-  <li>Developed risk optimization strategies using model scores to improve risk metrics</li>
-  <li>Challenger model gave 30% better fraud capture rate than champion at 20% operating range and 1% better approval rate with reduced losses in production</li>
- </ul></li>
+  <li><strong>Customer Segment:</strong> Existing Western Union customers using bank funded product</li>
+  <li><strong>Featurization:</strong> Created around 2000 features consisting of transactional velocity, age, count, decay, categorical
+and rating features that effectively define the fraud patterns and captures account take overs, IT refund and suspected fraud patterns.
+To process the large datasets AWS sagemaker studios processing jobs are used.</li>
+  <li><strong>EDA: </strong>EDA is performed to understand the features correlation with target.</li>
+  <li><strong>Feature Selection: </strong>Small set of important features selected using weight of evidence and Information value, 
+  forward feature selection and count of votes from different ml models feature importance.</li>
+  <li><strong>Modeling: </strong>Variaous machine learning and deep learning algorithms hyperparameters are tuned to achieve the best performance. 
+  Amongst these, selected best performing Aadaboost model.</li>
+  <li><strong>Results: </strong> Challenger Adaboost model gave 10% higher ROC AUC and 30% higher fraud capture rate at 20% operating range
+  than the champion model.</li>
   </ul>
   
+   <!-- Adding vertical space -->
+<p>      
+</p>
+  
+  <li><h4 id="statistics-and-machine-learning">Payment Fraud Risk Strategy Development</h4>
+  <ul>
+  <li><strong>Risk Scorecard Development: </strong>Selected machine learning models probability distributions and PDO calibration methods are used to develop risk scorecards.
+  These scorecard assigns a score to each transaction between 300 to 999. 300 denotes transaction is less riskier while 999 denotes transactions is highly riskier. </li>
+  <li><strong>Strategy Development: </strong>Risk strategies are developed consisting of transaction approve, manual review and decline decisions based on the
+custoer attributes and risk scores with an aim to achieve the less false positives and better fraud capture.</li>
+  <li><strong>Productionization: </strong>Final selected machine learning model along with risk strategies are productionized and tested for sample transactions.</li>
+  <li><strong>Results: </strong>For an entire customer segment 1% better approval rate with reduced chargebacks in production is achieved.</li>
+  </ul>  
+  </li>
+  
+     <!-- Adding vertical space -->
+<p>      
+</p>
+  
+  <li><h4 id="statistics-and-machine-learning">Portfolio Management – Australia, New Zealand, Malaysia, Hong Kong, Singapore</h4>
+  <ul>
+  <li>Improved the unique approval rates and reduced the chargebakcs by 10 bps by open up and risk strategies.</li>
+  <li>Effectively mitigated chargebacks occurring from scams and fraud spikes by raising risk rule.</li>
+  <li>Reduced new customer decline by 10% by developing anomaly detection machine learning and deep learning models and risk
+  strategy on risk declined transactions.</li>
+  </ul>  
+  </li>
+  
+       <!-- Adding vertical space -->
+<p>       
+</p>
+  
+  <li><h4 id="statistics-and-machine-learning"> Power BI Dashboard Development</h4>
+  <ul>
+  <li>Prepared and maintained weekly cards transactions risk metrics dashboard and model monitoring dashboard
+for capturing all risk models performance (fraud capture, gain, ROC and missing score).</li>
+  <li>Developed dashboards for risk metric monitoring and business insights on projects consisting of customer 
+acquisition through callback campaigns, processor change, platform update, payment verification process.</li>
+  </ul>  
+  </li>
+  
+         <!-- Adding vertical space -->
+<p>      
+</p>
+  
+  <li><h4 id="statistics-and-machine-learning"> Customer Segmentation And Anomaly Detection</h4>
+  <ul>
+  <li><strong>Winner of the Innovation Contest, DRDS, Western Union - 2023</strong></li>
+  <li>Developed clustering models (kmeans and deep embedded clustering) for developing higher fraud capture 
+segments than existing once on a large payments data of customers using different product.</li>
+  <li>Defined riskier segments based on customer behavior which captured around 10% better fraud capture rate.</li>
+  </ul>  
+  </li>
+  
+           <!-- Adding vertical space -->
+<p>      
+</p>
+  
+  <li><h4 id="statistics-and-machine-learning">Coupled Electric Motor Pump</h4>
+  <ul>
+  <li>Developed and tested the regression algorithm for power loss and noise optimization for electric motor
+and hydraulic pump combination and achieved 0.94 coefficient of determination value on a loss dataset.</li>
+  <li>Analysis was helpful in ‘plug and play solution with improved efficiency and reduced noise’ hypothesis
+testing and strong value proposition for project.</li>
+  </ul>  
+  </li>
+  
+  
+             <!-- Adding vertical space -->
+<p>        
+</p>
+  
+  <li><h4 id="statistics-and-machine-learning">Excavator System Design <a href="https://hecltd.com/events.php?id=20190918" 
+  target="_blank" rel="noopener noreferrer">(Article: Excavator Inauguration) </a></h4>
+  <ul>
+  <li>Developed a high-fidelity excavator system model consisting of hydraulic architecture and estimated the
+system models output distribution for normally distributed control factors.</li>
+  <li>Obtained the model output within six sigma by tuning control parameters.</li>
+  <li>Analysis helped in mitigating risks, making design decisions and successful commissioning of an excavator.</li>
+  <li>Test results showed 90% conformity on statistics-based prediction of duty cycle, pressure, and flow</li>
+  </ul>  
+  </li>
+  
+             <!-- Adding vertical space -->
+<p>        
+</p>
+  
+  <li><h4 id="statistics-and-machine-learning">Response Analysis for Brake Design</h4>
+  <ul>
+  <li>Developed a hydraulic disk brake multi physics model to predict the brake engage and release response.</li>
+  <li>Performed statistical variation analysis of control factors which helped to take the design decisions.</li>
+  </ul>  
+  </li>
+  
+  
+  </ul>
+
+  
  <!-- Adding vertical space -->
-<p>      .  
+<p>        
 </p> 
 
   <h2 id="core-competencies">Core Competencies</h2>
   <ul>
-  <li><strong>Languages</strong>: Python, SQL </li>
-  <li><strong>Methodologies</strong>: Machine Learning, Time Series Analysis, Deep Learning, Statistics</li>
+  <li><strong>Languages</strong>: Python, SQL, Matlab </li>
+  <li><strong>Methodologies</strong>: Machine Learning, Deep Learning, Statistics, Anomaly Detection</li>
+  <li><strong>Supervised Algorithms</strong>: KNN, Naïve Bayes, Linear regression, Logistic regression, SVM, Decision Tree, Random 
+Forest, Boosting</li>
+  <li>Clustering and Dimensionality Reduction Techniques</li>
+  <li>Neural network, CNN, RNN, optimization algorithms</li>
   <li><strong>Tools and Frameworks </strong>: Amazon Web Services (S3, Sagemaker Studio, EC2), Microsoft Power BI, MS Excel,
 				TensorFlow, Keras, Sci-kit learn</li>
   </ul>
  
 <!-- Adding vertical space -->
-<p>      .  
+<p>       
 </p>
+ 
+ 
  
   <h2 id="achievements">Achievements</h2>
   <ul>
@@ -196,13 +309,14 @@ features in AWS sagemaker studio and deployed in production for fraudulent trans
 	(Elite Silver) certificate for Data Science for Engineers</a> from IIT Madras</li>
   <li>Successfully obtained <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/937MFLL52HNR" target="_blank" rel="noopener noreferrer">
 certificate for Deep Learning specialization</a> from DeepLearning.AI and Coursera</li>
+<li>Winner of the Innovation Contest, DRDS, Western Union - 2023, whose obective was to determine the customer segments to capture the higher frauds than the existing segments.</li>
   <li>Received <a href="https://drive.google.com/file/d/1nqtj86GRHp8jwUu8JU351i0sZY7lUnej/view?usp=sharing" target="_blank" rel="noopener noreferrer">
 Institute Organizational Color award</a> for exemplary performance as an Executive Member of Post Graduate Academic Council (2015-2016), wherein
 lead and managed a 17 member team for constructive activities and initiatives related to post graduate academics.</li>
   </ul>
   
 <!-- Adding vertical space -->
-<p>      .  
+<p>      
 </p>
   
   <h2 id="certificates">Certificates</h2>
