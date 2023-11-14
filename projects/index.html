@@ -108,37 +108,325 @@
 <!-- Adding vertical space -->
 <p>      
 </p>  
+
+
   
-  <h2 id="projects">Projects</h2>
+  <h1 id="projects">Projects</h1>
   
-  <h3><strong><a href="https://github.com/Swapnil-Ransing/PredictingClientsLoanRepaymentAbility">Predicting Clients Loan Repayment Ability</a></strong></h3>
+  <h2><strong><a href="https://github.com/Swapnil-Ransing/PredictingClientsLoanRepaymentAbility">Predicting Clients Loan Repayment Ability</a></strong></h2>
+  <a href="https://github.com/Swapnil-Ransing/PredictingClientsLoanRepaymentAbility">GitHub Project Link</a>
+  <!-- <details> -->
+	<!-- <summary> -->
+	  <!-- (Click For Details) -->
+	<!-- </summary> -->
   <div class="container_row">
 
       <div class="text">
         Many people struggle to get loans due to insufficient or non-existent credit histories. Unfortunately, this population is often taken advantage 
 		of by untrustworthy lenders. Home credit accesses repayment ability of this unbanked population by using variety of data including telco and 
-		transactional information. Doing so will ensure that clients capable of repayment are not rejected and that loans are given.
+		transactional information. <u>Doing so will ensure that clients capable of repayment are not rejected and that loans are given.</u>
 <p>      
 </p>
-		This problem statement of predicting clients loan repayment ability is a Kaggle competition happened in year 2018. 
+		This problem statement of predicting clients loan repayment ability is a 
+		<a href="https://www.kaggle.com/competitions/home-credit-default-risk/overview">Kaggle competition happened in year 2018.</a> 
 		This competition was conducted by Home credit group. Home credit is an international consumer finance provider company.
 		
 		<p>       
 </p>
 <p>		Following steps were taken to solve this case study:</p>
-  <li><strong>EDA and Featurization: </strong> EDA is performed to understand variables correlation with target. Created around 
-1770 features consisting of velocity, age, count, decay, categorical variables from provided datasets.</li>
-  <li><strong>Feature Selection: </strong>Small set of important features selected using weight of evidence and Information value, 
-  forward feature selection and count of votes from different ml models feature importance.</li>
-  <li><strong>Modeling: </strong>Variaous machine learning and deep learning algorithms hyperparameters are tuned to achieve the best performance. 
-  Amongst these, selected best performing LightGBM model.</li>
-  <li><strong>Results: </strong> LightGBM model gave 76% ROC AUC and 53% fraud capture rate at 20% operating range on the OOT data.</li>
-      </div>
-  </div>
+<h4><strong>Defining Business Constrains and Performance Metrics:</strong></h4>
+<p>
+Business Constraints:
+<ol>
+<li>No strict latency requirements</li>
+<li>Prediction probability is important</li>
+<li>Results interpretability is important</li>
+</ol>
+</p>
+<p>
+Performance metrics:
+<ol>
+<li>Area under the ROC curve</li>
+<li>F1 score</li>
+<li>Confusion matrix</li>
+</ol>
+</p>
+
+<h4><strong> Exploratory Data Analysis (EDA):</strong></h4>
+
+
+<!-- <div class="image"> -->
+        <!-- <img src="..\assets\img\TargetDistribution.jpg" width="400" height="350"> -->
+<!-- </div> -->
+<!-- <div class="text"> -->
+	Provided data consisted of 7 individual dataframes. Each of the provided dataframe was analyzed one by one.
+	From these dataframes categorical and continuous variables were found and analyzed.
+	<p>
+	</p>
+    Target distribution on the data has shown that the data is imbalanced with around 8% defaulters. 
+	Defaulters are client with payment difficulties: he/she had late payment more than X days on at least one of the first Y installments
+	of the loan in our sample while non defaulters are rest of the clients.
+
+<!-- </div> -->
+<p>
+	</p>
+	
+  <h4><strong>Featurization: </strong></h4>
+Each of the provided dataframes data was cleaned first and then featurized. Following features were created for each of the individual dataframes:
+<ol>
+<li>Count variables</li>
+<li>Age variables</li>
+<li>Velocity variables </li>
+<li>Decay Variables </li>
+<li>Categorical variable encoding </li>
+<li>Aggregation techniques</li>
+</ol>
+Once the individual dataframes were featurized, they were left joined on the Application Train and Application Test dataframes. 
+<u>1770 different variables were created </u> in the featurization.
+<li> Application train merged dataframe shape was (307511, 1772)</li>
+<li> Application test merged dataframe shape was (48744, 1771)</li>
+
+<p>
+	</p>
+  <h4><strong>Feature Selection: </strong></h4>
+  Featurization produced 1770 features, however all of these features should not be used in the machine learning model.
+  It was necessary to understand the most important features amongst these 1770 features which would be useful for better predictions.
+  Following steps were taken to get the importatnt 15 features for classification task:
+  <ol>
+  <li>Data cleaning of merged dataframe </li>
+  <li>Top 40 feature selection using Weight of Evidence and Information Value</li>
+  <li>Min max scaling and SMOTE data</li>
+  <li>Top 15 feature selection using count of votes</li>
+  </ol>
+  Following are the selected top 15 variables:
+  
+  <head>
+    <style>
+    table,
+    th,
+    td {
+        border: 1px solid green;
+        border-collapse: collapse;
+    }
+    </style>
+</head>
  
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Variable Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>EXT_SOURCE_2</td>
+            <td>Normalized score from external data source</td>
+        </tr>
+        <tr>
+            <td>EXT_SOURCE_3</td>
+            <td>Normalized score from external data source</td>
+        </tr>
+        <tr>
+            <td>DAYS_PAYMENT_RATIO_MAX_Latest_year</td>
+            <td>Maximum value from ratio of previous credit pay date to the actual payment date wrt current application for last one year</td>
+        </tr>
+		<tr>
+            <td>AMT_GOODS_PRICE</td>
+            <td>Goods price of good that client asked for (if applicable) on the previous application</td>
+        </tr>
+		<tr>
+            <td>CNT_DRAWINGS_ATM_CURRENT_MAX_Latest_year</td>
+            <td>Max value from count of ATM drawings during a last year month on the previous credit</td>
+        </tr>
+		<tr>
+            <td>EXT_SOURCE_1</td>
+            <td>Normalized score from external data source</td>
+        </tr>
+		<tr>
+            <td>DAYS_DETAILS_CHANGE_MUL</td>
+            <td>Multiplication of how many days before the application did client (changed the phone, changed the registration, change the identity document) with which he applied for the loan</td>
+        </tr>
+		<tr>
+            <td>AMT_CREDIT</td>
+            <td>Credit amount of the loan</td>
+        </tr>
+		<tr>
+            <td>DAYS_BIRTH</td>
+            <td>Client's age in days at the time of application</td>
+        </tr>
+		<tr>
+            <td>DEF_60_CREDIT_RATIO</td>
+            <td>Ratio of Credit amount of the loan by how many observation of client's social surroundings defaulted on 60 (days past due) DPD</td>
+        </tr>
+		<tr>
+            <td>AMT_PAYMENT_DIFF_MAX_Latest_year</td>
+            <td>Max difference between the prescribed installment amount of previous credit and the actual amount paid over the last year</td>
+        </tr>
+		<tr>
+            <td>INTEREST_SHARE_MEAN_LAST_5</td>
+            <td>mean ratio of (Credit amount* Term* annuity) of previous loan by credit amount of the loan for last 5 month</td>
+        </tr>
+		<tr>
+            <td>REGION_POPULATION_RELATIVE</td>
+            <td>Normalized population of region where client lives (higher number means the client lives in more populated region)</td>
+        </tr>
+		<tr>
+            <td>DAYS_LAST_PHONE_CHANGE</td>
+            <td>How many days before application did client changed phone</td>
+        </tr>
+		<tr>
+            <td>EMPLOYED_TO_AGE_RATIO</td>
+            <td>Ratio of how many days before the application the person started current employment by client's age in days wrt current application</td>
+        </tr>
+    </table>
+</body>
+
+<p>
+</p>
+
+  <h4><strong>Modeling and Results: </strong></h4>
+ Various models including machine learning and deep learning models were implemented on the final set of variables.
+ These models hyperparameters were tuned to achieve the best performance of ROC AUC.
+ Following is the summary result of these models:
+ 
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Model Number</th>
+            <th>Model Name</th>
+            <th>OOT ROC AUC</th>
+			<th>OOT Defaulter Capture at 20% Operating range</th>
+			<th>Kaggle Private Score</th>
+			<th>Kaggle Public Score</th>
+			<th>Predicion Latency</th>
+			<th>Probability Distribution</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Logistic Regression</td>
+            <td>71.95%</td>
+			<td>45.96%</td>
+			<td>70.28%</td>
+			<td>70.49%</td>
+			<td>Low</td>
+			<td>Good</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>SGD</td>
+            <td>71.93%</td>
+			<td>45.83%</td>
+			<td>70.16%</td>
+			<td>70.34%</td>
+			<td>Low</td>
+			<td>Good</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Adaboost</td>
+            <td>75.68%</td>
+			<td>52.52%</td>
+			<td>74.02%</td>
+			<td>74.65%</td>
+			<td>Low</td>
+			<td>Ok</td>
+        </tr>
+		<tr>
+            <td>4</td>
+            <td>XGBoost</td>
+            <td>75.43%</td>
+			<td>51.90%</td>
+			<td>73.29%</td>
+			<td>73.39%</td>
+			<td>Low</td>
+			<td>Poor</td>
+        </tr>
+		<tr>
+            <td>5</td>
+            <td>LightGbm</td>
+            <td>75.97%</td>
+			<td>52.56%</td>
+			<td>74.47%</td>
+			<td>74.20%</td>
+			<td>Low</td>
+			<td>Ok</td>
+        </tr>
+		<tr>
+            <td>6</td>
+            <td>MLP</td>
+            <td>73.85%</td>
+			<td>50.33%</td>
+			<td>72.28%</td>
+			<td>72.67%</td>
+			<td>Low</td>
+			<td>Poor</td>
+        </tr>
+    </table>
+</body>
+
+<p>
+</p>
+<h4><strong>Risk Scorecard and Risk Strategy Development: </strong></h4>
+As the Adaboost model shown a good probability distribution and high deafulter capture rate at 20% operating range of the oot data,
+Adaboost model was used for for developing the scorecard. After tuning the PDO calibration parameters, aligned score equation obtained for this model was :
+<li><strong>Aligned Score= 719.948 - (-1531.484*score)</strong></li>
+where, score is log(odds).
+<p>
+Following distribution of various metrics in each aligned score bucket is obtained for train, test and oot:
+</p>
+<div class="image">
+        <img src="..\assets\img\RiskScoreStrategy.jpg" width="750" height="450">
+</div>
+A simple risk strategy as follows can be developed which can aim at reducing loans given to defaulters and 
+increase loan given to the good population based on the risk scorecard.
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Decision</th>
+            <th>Score Range</th>
+            <th>% Total Applicants</th>
+			<th>% Bad/Total Applicant</th>
+			<th>% Bad/Total Bad Applicant</th>
+        </tr>
+        <tr>
+            <td>Direct Approval</td>
+            <td> 300< Score <= 500 </td>
+            <td>40%</td>
+			<td>1.5%</td>
+			<td>20%</td>
+        </tr>
+        <tr>
+            <td>Manual Review</td>
+            <td>500 <Score <= 560 </td>
+            <td>40%</td>
+			<td>2.9%</td>
+			<td>36.4%</td>
+        </tr>
+        <tr>
+            <td>Direct Decline</td>
+            <td>Score > 560</td>
+            <td>20%</td>
+			<td>3.5%</td>
+			<td>43.6%</td>
+        </tr>
+    </table>
+</body>
+This strategy can be refined further and approval percentage can be increased by clubing the scores with 
+other variables (applicants attribute) like amount of loan, age of applicant etc.   
+  </div>
+  </div>
+  <!-- </details> -->
+
 		<p>       
 </p> 
-    <h3><strong><a href="https://github.com/Swapnil-Ransing/Microsoft-Malware-Detection">Multiclass classification using Natural language processing</a></strong></h3>
+
+  
+    <h2><strong><a href="https://github.com/Swapnil-Ransing/Microsoft-Malware-Detection">Multiclass classification using Natural language 
+	processing</a></strong></h2>
+	<a href="https://github.com/Swapnil-Ransing/Microsoft-Malware-Detection">GitHub Project Link</a>
+	<!-- <details> -->
+	<!-- <summary> -->
+	  <!-- (Click For Details) -->
+	<!-- </summary> -->
   <div class="container_row">
 
       <div class="text">
@@ -157,9 +445,12 @@
   <li><strong>Modeling: </strong>Variaous machine learning and deep learning algorithms hyperparameters are tuned to achieve the best performance. 
   Amongst these, selected best performing XGBoost model.</li>
   <li><strong>Results: </strong> XGBoost model gave 0.014719 oot log loss and 0.368% misclassification.</li>
+  
       </div>
   </div>
+  <!-- </details> -->
   </div>
+  
   
   
  <!-- Adding vertical space -->
