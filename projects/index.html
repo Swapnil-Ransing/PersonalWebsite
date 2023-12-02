@@ -447,6 +447,55 @@ other variables (applicants attribute) like amount of loan, age of applicant etc
   
       </div>
   </div>
+  
+  <p>       
+</p> 
+
+  
+    <h2><strong><a href="https://chatbotllmepfo.streamlit.app/"> Chatbot poc project using langchain</a></strong></h2>
+	<a href="https://chatbotllmepfo.streamlit.app/">Chatbot Link</a>
+	<a href="https://github.com/Swapnil-Ransing/AnsweringQuestionsUsingLLM">GitHub Project Link</a>
+	<!-- <details> -->
+	<!-- <summary> -->
+	  <!-- (Click For Details) -->
+	<!-- </summary> -->
+  <div class="container_row">
+
+      <div class="text">
+        In this project a question and answer system related to EPFO (Employee's Provident Fund Organization) is developed.
+		
+		End to End LLM POC project to answer the EPFO questions conssting of Account (UAN) (creation, documents required, claims), KYC (procedure, update)
+		is developed  using
+		<li>Google palm LLM</li>
+		<li>Huggingface embedding</li>
+		<li>FAISS database</li>
+		<li>Prompt Template</li>
+<p>        
+</p>		
+		EPFO is one of the World's largest Social Security Organisations in terms of clientele and the volume of financial transactions undertaken.
+		In the developed project questions related to account (UAN) (creation, documents required, claims), KYC (procedure, update) etc. 
+		are tried to answered using google palm large language model.
+<p>        
+</p>
+
+<h4><strong>Project Architecture: </strong></h4>
+<ol>
+<li>CSV loading : CSV loader from langchain document loader will load the csv question and answer file.</li>
+<li>Database questions embedding : Questions from CSV question and answer file will be embedded using huggingface embeding.</li>
+<li>Vector Database : Embedded questions and corresponding answers will be stored using FAISS.</li>
+<li>Creating a retrieval chain : Using a prompt template and google palm api retrieval chain will be prepared.</li>
+</ol>
+<p>        
+</p>
+<h4><strong>Output: </strong></h4>
+Output will be an answer based on the input question. Following procedure happens in the background:
+<ol>
+<li>A question asked to the retrieval chain will try to find the similar questions from the vector database.</li>
+<li>Corresponding answers from the vector database of the relevant questions from step 1 will be outputted nicely using google palm llm.</li>
+</ol>
+  
+      </div>
+  </div>
   <!-- </details> -->
   </div>
   
@@ -456,6 +505,8 @@ other variables (applicants attribute) like amount of loan, age of applicant etc
 <p>      
 </p> 
   
+  <p>      
+</p> 
   <h2 id="micro-projects">Work Experience Projects</h2>
   <ul>
   <li><h4 id="statistics-and-machine-learning">Fraudulent Transaction Detection</h4>
