@@ -9,8 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Swapnil Ransing</title>
-    <meta name="author" content="Swapnil Ransing" />
+    <title>Swapnil Ranshing</title>
+    <meta name="author" content="Swapnil Ranshing" />
     <meta name="description" content="portfolio projects, personal and work details" />
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
 
@@ -52,7 +52,7 @@
       <!-- Nav Bar -->
       <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
         <div class="container">
-          <span class="font-weight-bold">Swapnil Ransing</span> 
+          <span class="font-weight-bold">Swapnil Ranshing</span> 
 		  &nbsp &nbsp 
 		  <!-- Social Icons -->
           <div class="navbar-brand social">
@@ -104,7 +104,7 @@
           <header class="post-header">
             <h1 class="post-title">Portfolio</h1>
             <p class="post-description">
-			This Portfolio is a compilation of all the Data Science projects I have done for academic, self-learning and hobby purposes.
+			This Portfolio is a compilation of the Data Science projects I have done for academic, self-learning and hobby purposes.
 			This portfolio also contains my work experience project details, core competencies, skills, achievements, and certificates.</p>
           </header>
 
@@ -426,6 +426,41 @@ other variables (applicants attribute) like amount of loan, age of applicant etc
 		<p>       
 </p> 
 
+
+
+<h2><strong><a href="https://github.com/Swapnil-Ransing/Microsoft-Malware-Detection">NLP - Question Pair Similarity</a></strong></h2>
+<a href="https://github.com/Swapnil-Ransing/NLP_QuestionPairSimilarity">GitHub Project Link</a>
+  <div class="container_row">
+
+      <div class="text">
+        The Quora Question Pairs competition on Kaggle challenged participants to build models that could identify duplicate questions.
+		This competition was a significant challenge in natural language processing (NLP), requiring a combination of techniques from text preprocessing,
+		feature engineering, and machine learning. 
+<p>        
+</p>
+		Quora aimed to improve the user experience by reducing the number of duplicate questions.
+		<strong>The challenge was to determine whether pairs of questions had the same intent.</strong>
+		
+		<p>       
+</p>
+<p>		Following steps were taken to solve this case study:</p>
+<li><strong>Data Collection and EDA:</strong> Data was fetched from kaggle dataset. EDA performed to get the details of data and it also revealed that target variable has around
+36% similar questions.</li>
+<li><strong>Data Processing:</strong> Text data was cleaned by converting question tolowercase, converting currencies to text, 
+ removing punctuation, numbers, special characters, and HTML tags, expanding contractions, handling emojis and spell correction.</li>
+<li><strong>Featurization and Feature Selection:</strong> Features based on count of words and its arithmatic, fuzzy features were created. 
+TFIDF weighted 50 dimensional word2vec were also created. Total 126 features were created and final 10 features were selected using a correlation method.</li>
+<li><strong>Model Development:</strong> XGBoost hyperparameters were tuned using GRIDSEARCHCV and best parameters were identified. 
+Tuned XGBoost model is developed on the train data and evaluated on test data.</li>
+<li><strong>Test Data Results:</strong> Accuracy= 75.39%, F1-score= 0.67 and log loss=8.87 is achieved.</li>
+<li><strong>Deployment:</strong> Deployment file is created where a user can ask a pair of question and 
+get an answer whether two questions are similar or not along with similarity probability.</li>
+  
+      </div>
+  </div>
+  
+  <p>       
+</p> 
   
     <h2><strong><a href="https://github.com/Swapnil-Ransing/Microsoft-Malware-Detection">Multiclass classification using Natural language 
 	processing</a></strong></h2>
